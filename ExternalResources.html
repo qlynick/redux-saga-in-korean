@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="ko" >
     <head>
-        <title>Glossary · GitBook</title>
+        <title>External Resources · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="api/" />
+    <link rel="next" href="Troubleshooting.html" />
     
     
-    <link rel="prev" href="Troubleshooting.html" />
+    <link rel="prev" href="recipes/" />
     
 
     </head>
@@ -421,7 +421,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="ExternalResources.html">
+        <li class="chapter active" data-level="1.6" data-path="ExternalResources.html">
             
                 <a href="ExternalResources.html">
             
@@ -447,7 +447,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="Glossary.html">
+        <li class="chapter " data-level="1.8" data-path="Glossary.html">
             
                 <a href="Glossary.html">
             
@@ -503,7 +503,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Glossary</a>
+        <a href="." >External Resources</a>
     </h1>
 </div>
 
@@ -518,39 +518,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="glossary">Glossary</h1><p>This is a glossary of the core terms in Redux Saga.</p><h3 id="effect">Effect</h3><p>An effect is a plain JavaScript Object containing some instructions to be executed by the saga middleware.</p><p>You create effects using factory functions provided by the redux-saga library. For example you use
-<code>call(myfunc, &apos;arg1&apos;, &apos;arg2&apos;)</code> to instruct the middleware to invoke <code>myfunc(&apos;arg1&apos;, &apos;arg2&apos;)</code> and return
-the result back to the Generator that yielded the effect</p><h3 id="task">Task</h3><p>A task is like a process running in background. In a redux-saga based application there can be
-multiple tasks running in parallel. You create tasks by using the <code>fork</code> function</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">saga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-  <span class="token keyword">const</span> task <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="blockingnon-blocking-call">Blocking/Non-blocking call</h3><p>A Blocking call means that the Saga yielded an Effect and will wait for the outcome of its execution before
-resuming to the next instruction inside the yielding Generator.</p><p>A Non-blocking call means that the Saga will resume immediately after yielding the Effect.</p><p>For example</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">saga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span>ACTION<span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">// Blocking: will wait for the action</span>
-  <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>ApiFn<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">// Blocking: will wait for ApiFn (If ApiFn returns a Promise)</span>
-  <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// Blocking: will wait for otherSaga to terminate</span>
-
-  <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>                   <span class="token comment" spellcheck="true">// Non-Blocking: will dispatch within internal scheduler</span>
-
-  <span class="token keyword">const</span> task <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// Non-blocking: will not wait for otherSaga</span>
-  <span class="token keyword">yield</span> <span class="token function">cancel</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>                           <span class="token comment" spellcheck="true">// Non-blocking: will resume immediately</span>
-  <span class="token comment" spellcheck="true">// or</span>
-  <span class="token keyword">yield</span> <span class="token function">join</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>                              <span class="token comment" spellcheck="true">// Blocking: will wait for the task to terminate</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="watcherworker">Watcher/Worker</h3><p>refers to a way of organizing the control flow using two separate Sagas</p><ul><li><p>The watcher: will watch for dispatched actions and fork a worker on every action</p></li>
-<li><p>The worker: will handle the action and terminate</p></li></ul>
-<p>example</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> action <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span>ACTION<span class="token punctuation">)</span>
-    <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>worker<span class="token punctuation">,</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">worker</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// ... do some stuff</span>
-<span class="token punctuation">}</span></code></pre>
+                                <h1 id="external-resources">External Resources</h1><h3 id="articles-on-generators">Articles on Generators</h3><ul><li><a href="http://gajus.com/blog/2/the-definitive-guide-to-the-javascript-generators" target="_blank">The Definitive Guide to the JavaScript Generators</a> by Gajus Kuizinas
+</li>
+<li><a href="https://davidwalsh.name/es6-generators" target="_blank">The Basics Of ES6 Generators</a> by Kyle Simpson
+</li>
+<li><a href="http://www.2ality.com/2015/03/es6-generators.html" target="_blank">ES6 generators in depth</a> by Axel Rauschmayer
+</li></ul>
+<h3 id="articles-on-redux-saga">Articles on redux-saga</h3><ul><li><a href="https://riad.blog/2015/12/28/redux-nowadays-from-actions-creators-to-sagas/" target="_blank">Redux nowadays: From actions creators to sagas</a> by Riad Benguella
+</li>
+<li><a href="http://jaysoo.ca/2016/01/03/managing-processes-in-redux-using-sagas/" target="_blank">Managing Side Effects In React + Redux Using Sagas</a> by Jack Hsu
+</li>
+<li><a href="https://medium.com/infinite-red/using-redux-saga-to-simplify-your-growing-react-native-codebase-2b8036f650de#.7wl4wr1tk" target="_blank">Using redux-saga To Simplify Your Growing React Native Codebase</a> by Steve Kellock
+</li>
+<li><a href="http://konkle.us/master-complex-redux-workflows-with-sagas/" target="_blank">Master Complex Redux Workflows with Sagas</a> by Brandon Konkle
+</li>
+<li><a href="http://wecodetheweb.com/2016/01/23/handling-async-in-redux-with-sagas/" target="_blank">Handling async in Redux with Sagas</a> by Niels Gerritsen
+</li>
+<li><a href="https://medium.com/@MattiaManzati/tips-to-handle-authentication-in-redux-2-introducing-redux-saga-130d6872fbe7#.g49x2gj1g" target="_blank">Tips to handle Authentication in Redux</a> by Mattia Manzati
+</li>
+<li><a href="http://joelhooks.com/blog/2016/03/20/build-an-image-gallery-using-redux-saga/?utm_content=bufferbadc3&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer" target="_blank">Build an Image Gallery Using React, Redux and redux-saga</a> by Joel Hooks
+</li>
+<li><a href="https://medium.com/@andresmijares25/async-operations-using-redux-saga-2ba02ae077b3#.556ey5blj" target="_blank">Async Operations using redux saga</a> by Andr&#xE9;s Mijares
+</li>
+<li><a href="https://ohyayanotherblog.ghost.io/redux-saga-clock/" target="_blank">Introduction to Redux Saga</a> by Matt Granmoe
+</li>
+<li><a href="https://medium.com/@xanf/vuex-meets-redux-saga-e9c6b46555e#.d4318am40" target="_blank">Vuex meets Redux-saga</a> by Illya Klymov
+</li></ul>
+<h3 id="addons">Addons</h3><ul><li><a href="https://www.npmjs.com/package/redux-saga-sc" target="_blank">redux-saga-sc</a> &#x2013; Provides sagas to easily dispatch redux actions over SocketCluster websockets
+</li>
+<li><a href="https://www.npmjs.com/package/redux-form-saga" target="_blank">redux-form-saga</a> &#x2013; An action creator and saga for integrating Redux Form and Redux Saga
+</li>
+<li><a href="https://www.npmjs.com/package/redux-electron-enhancer" target="_blank">redux-electron-enhancer</a> &#x2013; Redux store which synchronizes between instances in multiple process
+</li>
+<li><a href="https://www.npmjs.com/package/eslint-plugin-redux-saga" target="_blank">eslint-plugin-redux-saga</a> - ESLint rules that help you to write error free sagas
+</li>
+<li><a href="https://www.npmjs.com/package/redux-saga-router" target="_blank">redux-saga-router</a> - Helper for running sagas in response to route changes.
+</li>
+<li><a href="https://github.com/xanf/vuex-redux-saga" target="_blank">vuex-redux-saga</a> - Bridge between Vuex and Redux-Saga
+</li></ul>
 
                                 
                                 </section>
@@ -578,12 +583,12 @@ resuming to the next instruction inside the yielding Generator.</p><p>A Non-bloc
 
             
                 
-                <a href="Troubleshooting.html" class="navigation navigation-prev " aria-label="Previous page: Troubleshooting">
+                <a href="recipes/" class="navigation navigation-prev " aria-label="Previous page: 레시피">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="api/" class="navigation navigation-next " aria-label="Next page: API Reference">
+                <a href="Troubleshooting.html" class="navigation navigation-next " aria-label="Next page: Troubleshooting">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -594,7 +599,7 @@ resuming to the next instruction inside the yielding Generator.</p><p>A Non-bloc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Glossary","level":"1.8","depth":1,"next":{"title":"API Reference","level":"1.9","depth":1,"path":"api/README.md","ref":"api/README.md","articles":[]},"previous":{"title":"Troubleshooting","level":"1.7","depth":1,"path":"Troubleshooting.md","ref":"Troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism@1.0.0","-highlight","github"],"root":"./docs_kr","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mskims/redux-saga-in-korean/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ko","gitbook":"3.2.0"},"file":{"path":"Glossary.md","mtime":"2017-04-25T11:26:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-04-25T12:46:37.560Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"External Resources","level":"1.6","depth":1,"next":{"title":"Troubleshooting","level":"1.7","depth":1,"path":"Troubleshooting.md","ref":"Troubleshooting.md","articles":[]},"previous":{"title":"레시피","level":"1.5","depth":1,"path":"recipes/README.md","ref":"recipes/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism@1.0.0","-highlight","github"],"root":"./docs_kr","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mskims/redux-saga-in-korean/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ko","gitbook":"3.2.0"},"file":{"path":"ExternalResources.md","mtime":"2017-04-25T11:26:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-04-25T12:46:37.560Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

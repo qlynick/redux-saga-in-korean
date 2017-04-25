@@ -1,0 +1,795 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <title>튜토리얼 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="SagaBackground.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Table of Contents</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="BeginnerTutorial.html">
+            
+                <a href="BeginnerTutorial.html">
+            
+                    
+                    튜토리얼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="SagaBackground.html">
+            
+                <a href="SagaBackground.html">
+            
+                    
+                    배경지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basics/">
+            
+                <a href="../basics/">
+            
+                    
+                    기본
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basics/UsingSagaHelpers.html">
+            
+                <a href="../basics/UsingSagaHelpers.html">
+            
+                    
+                    헬퍼 함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basics/DeclarativeEffects.html">
+            
+                <a href="../basics/DeclarativeEffects.html">
+            
+                    
+                    효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basics/DispatchingActions.html">
+            
+                <a href="../basics/DispatchingActions.html">
+            
+                    
+                    액션 확산
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basics/ErrorHandling.html">
+            
+                <a href="../basics/ErrorHandling.html">
+            
+                    
+                    에러 핸들링
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basics/Effect.html">
+            
+                <a href="../basics/Effect.html">
+            
+                    
+                    이펙트 추상화
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    심화
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/FutureActions.html">
+            
+                <a href="../advanced/FutureActions.html">
+            
+                    
+                    Pulling future actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/NonBlockingCalls.html">
+            
+                <a href="../advanced/NonBlockingCalls.html">
+            
+                    
+                    Non blocking calls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/RunningTasksInParallel.html">
+            
+                <a href="../advanced/RunningTasksInParallel.html">
+            
+                    
+                    Running tasks in parallel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/RacingEffects.html">
+            
+                <a href="../advanced/RacingEffects.html">
+            
+                    
+                    Starting a race between multiple Effects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/SequencingSagas.html">
+            
+                <a href="../advanced/SequencingSagas.html">
+            
+                    
+                    Sequencing Sagas using yield*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../advanced/ComposingSagas.html">
+            
+                <a href="../advanced/ComposingSagas.html">
+            
+                    
+                    Composing Sagas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../advanced/TaskCancellation.html">
+            
+                <a href="../advanced/TaskCancellation.html">
+            
+                    
+                    Task cancellation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../advanced/ForkModel.html">
+            
+                <a href="../advanced/ForkModel.html">
+            
+                    
+                    redux-saga's fork model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../advanced/Concurrency.html">
+            
+                <a href="../advanced/Concurrency.html">
+            
+                    
+                    Common Concurrency Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../advanced/Testing.html">
+            
+                <a href="../advanced/Testing.html">
+            
+                    
+                    Examples of Testing Sagas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../advanced/UsingRunSaga.html">
+            
+                <a href="../advanced/UsingRunSaga.html">
+            
+                    
+                    Connecting Sagas to external Input/Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../advanced/Channels.html">
+            
+                <a href="../advanced/Channels.html">
+            
+                    
+                    Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recipes/">
+            
+                <a href="../recipes/">
+            
+                    
+                    레시피
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ExternalResources.html">
+            
+                <a href="../ExternalResources.html">
+            
+                    
+                    External Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Troubleshooting.html">
+            
+                <a href="../Troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Glossary.html">
+            
+                <a href="../Glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >튜토리얼</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h1><h2 id="&#xBAA9;&#xC801;">&#xBAA9;&#xC801;</h2><p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; redux-saga &#xB97C; &#xAC00;&#xB2A5;&#xD55C; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC18C;&#xAC1C;&#xD560;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+<!--This tutorial attempts to introduce redux-saga in a (hopefully) accessible way.--></p><p>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC704;&#xD574;&#xC11C;, &#xC6B0;&#xB9AC;&#xB294; &#xAC04;&#xB2E8;&#xD55C; Redux &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xC788;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xCE74;&#xC6B4;&#xD130; &#xC608;&#xC2DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xAC81;&#xB2C8;&#xB2E4;.
+&#xC774; &#xCE74;&#xC6B4;&#xD130; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC740; &#xC544;&#xC8FC; &#xAC04;&#xB2E8;&#xD558;&#xBA74;&#xC11C;, &#xACFC;&#xB3C4;&#xD558;&#xAC8C; &#xBE60;&#xC9C0;&#xC9C0; &#xC54A;&#xACE0; redux-sage &#xC758; &#xAE30;&#xBCF8; &#xCEE8;&#xC149;&#xB4E4;&#xC744; &#xC124;&#xBA85; &#xD558;&#xAE30;&#xC5D0; &#xB531;&#xC785;&#xB2C8;&#xB2E4;.
+<!--For our getting started tutorial, we are going to use the trivial Counter demo from the Redux repo. The application is quite simple but is a good fit to illustrate the basic concepts of redux-saga without being lost in excessive details.--></p><h3 id="&#xCD08;&#xAE30;-&#xC124;&#xC815;">&#xCD08;&#xAE30; &#xC124;&#xC815;</h3><p>&#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0;, <a href="https://github.com/redux-saga/redux-saga-beginner-tutorial" target="_blank">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC800;&#xC7A5;&#xC18C;</a>. &#xB97C; &#xD074;&#xB860; &#xD558;&#xC138;&#xC694;.
+<!--Before we start, clone the [tutorial repository](https://github.com/redux-saga/redux-saga-beginner-tutorial).--></p><blockquote><p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC758; &#xCF54;&#xB4DC;&#xB4E4;&#xC740; <code>sagas</code> &#xBE0C;&#xB79C;&#xCE58;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p></blockquote><!--> The final code of this tutorial is located in the `sagas` branch.-->
+
+
+<p>&#xCEE4;&#xB9E8;&#xB4DC; &#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC138;&#xC694;:
+<!--Then in the command line, run:--></p><pre><code class="lang-sh">$ cd redux-saga-beginner-tutorial
+$ npm install</code></pre>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:
+<!--To start the application, run:--></p><pre><code class="lang-sh">$ npm start</code></pre>
+<p>&#xC6B0;&#xB9AC;&#xB294; <code>&#xC99D;&#xAC00;</code> &#xC640; <code>&#xAC10;&#xC18C;</code> &#xBC84;&#xD2BC;&#xC774; &#xC788;&#xB294; &#xCE74;&#xC6B4;&#xD130;&#xB85C; &#xC544;&#xC8FC; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xC2DC;&#xC791;&#xD558;&#xACE0;, &#xADF8;&#xD6C4; &#xBE44;&#xB3D9;&#xAE30; &#xD638;&#xCD9C;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;
+<!--We are starting with the simplest use case: 2 buttons to `Increment` and `Decrement` a counter. Later, we will introduce asynchronous calls.--></p><p>&#xC774;&#xC0C1;&#xC774; &#xC5C6;&#xB2E4;&#xBA74;, &#xB2F9;&#xC2E0;&#xC740; <code>&#xC99D;&#xAC00;</code> &#xC640; <code>&#xAC10;&#xC18C;</code> &#xBC84;&#xD2BC;&#xACFC; <code>Counter: 0</code> &#xC774;&#xB77C;&#xB294; &#xBA54;&#xC138;&#xC9C0;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC744;&#xAC83; &#xC785;&#xB2C8;&#xB2E4;.
+<!--If things go well, you should see 2 buttons `Increment` and `Decrement` along with a message below showing `Counter: 0`.--></p><blockquote><p>&#xB9CC;&#xC57D; &#xC774; &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC5B4;&#xB824;&#xC6C0;&#xC744; &#xACAA;&#xACE0;&#xACC4;&#xC2DC;&#xB2E4;&#xBA74;, &#xACE0;&#xBBFC;&#xD558;&#xC9C0; &#xB9C8;&#xC2DC;&#xACE0; <a href="https://github.com/redux-saga/redux-saga-beginner-tutorial/issues" target="_blank">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC800;&#xC7A5;&#xC18C;</a> &#xC5D0; &#xC5D0;&#xC288;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC8FC;&#xC138;&#xC694;.</p></blockquote><!--> In case you encountered an issue with running the application. Feel free to create an issue on the [tutorial repo](https://github.com/redux-saga/redux-saga-beginner-tutorial/issues).-->
+
+
+<h2 id="hello-sagas">Hello Sagas!</h2><p>&#xCCAB;&#xBC88;&#xC9F8; Saga &#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xBD05;&#xC2DC;&#xB2E4;! &#xC804;&#xD1B5;&#xC744; &#xB530;&#xB77C;, Saga &#xBC84;&#xC804; &apos;Hello, world&apos; &#xB97C; &#xC791;&#xC131;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;.
+<!--We are going to create our first Saga. Following the tradition, we will write our 'Hello, world' version for Sagas.--></p><p><code>sagas.js</code> &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4DC;&#xC2E0; &#xD6C4; &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xC801;&#xC73C;&#xC138;&#xC694;.
+<!--Create a file `sagas.js` then add the following snippet:--></p><pre><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">helloSaga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello Sagas!&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>&#xBB34;&#xC11C;&#xC6B4;&#xAC83;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;, &#xC774;&#xAC74; &#xADF8;&#xB0E5; &#xD3C9;&#xBC94;&#xD55C; &#xD568;&#xC218;&#xC77C; &#xBFD0;&#xC774;&#xC5D0;&#xC694;. (<code>*</code>&#xB97C; &#xC81C;&#xC678;&#xD558;&#xBA74;&#xC694;). &#xC774;&#xAC83;&#xC774; &#xD558;&#xB294;&#xC77C;&#xC740; &#xCF58;&#xC194;&#xC5D0; &#xD658;&#xC601; &#xBA54;&#xC138;&#xC9C0;&#xB97C; &#xC801;&#xB294;&#xAC83;&#xBC16;&#xC5D0; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+<!--So nothing scary, just a normal function (except for the `*`). All it does is print a greeting message into the console.--></p><p>&#xC6B0;&#xB9AC;&#xC758; Saga &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;, &#xBA87;&#xAC00;&#xC9C0; &#xD560; &#xC77C;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<!--In order to run our Saga, we need to:--></p><ul><li>Sagas &#xB9AC;&#xC2A4;&#xD2B8;&#xC640; &#xD568;&#xAED8; Saga &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; &#xB9CC;&#xB4DC;&#xC138;&#xC694;. (&#xC9C0;&#xAE08;&#xAE4C;&#xC9C4; <code>helloSaga</code> &#xC624;&#xC9C1; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;)
+</li>
+<li>Saga &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; Redux &#xC2A4;&#xD1A0;&#xC5B4;&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xC138;&#xC694;.
+</li></ul>
+<!--- create a Saga middleware with a list of Sagas to run (so far we have only one `helloSaga`)-->
+
+
+<!--- connect the Saga middleware to the Redux store-->
+
+
+<p>&#xC774;&#xC81C; <code>main.js</code> &#xB97C; &#xC791;&#xC131;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;:
+<!--We will make the changes to `main.js`:--></p><pre><code class="lang-javascript"><span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> from <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> createSagaMiddleware from <span class="token string">&apos;redux-saga&apos;</span>
+
+<span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> helloSaga <span class="token punctuation">}</span> from <span class="token string">&apos;./sagas&apos;</span>
+
+<span class="token keyword">const</span> sagaMiddleware <span class="token operator">=</span> <span class="token function">createSagaMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+  reducer<span class="token punctuation">,</span>
+  <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>sagaMiddleware<span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+sagaMiddleware<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>helloSaga<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> action <span class="token operator">=</span> type <span class="token operator">=</span><span class="token operator">&gt;</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// rest unchanged</span></code></pre>
+<p>&#xCC98;&#xC74C;&#xC5D0;, <code>./sagas</code> &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC628; &#xC6B0;&#xB9AC;&#xC758; Saga &#xB97C; &#xC784;&#xD3EC;&#xD2B8; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xB098;&#xC11C; <code>redux-saga</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC628; <code>createSagaMiddleware</code> &#xD329;&#xD1A0;&#xB9AC; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5C8;&#xC8E0;.
+<!--First we import our Saga from the `./sagas` module. Then we create a middleware using the factory function `createSagaMiddleware` exported by the `redux-saga` library.--></p><p><code>helloSaga</code> &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC804;&#xC5D0;, &#xBC18;&#xB4DC;&#xC2DC; <code>applyMiddleware</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4;&#xB97C; &#xC5F0;&#xACB0;&#xD574;&#xC57C; <code>sagaMiddleware.run(helloSaga)</code> &#xB97C; &#xD1B5;&#xD574; Saga &#xB97C; &#xC2DC;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.. 
+<!--Before running our `helloSaga`, we must connect our middleware to the Store using `applyMiddleware`. Then we can use the `sagaMiddleware.run(helloSaga)` to start our Saga.--></p><p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xC6B0;&#xB9AC;&#xC758; Saga &#xB294; &#xD2B9;&#xBCC4;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xAC74; &#xB2E8;&#xC9C0; &#xB85C;&#xADF8; &#xBA54;&#xC138;&#xC9C0;&#xB9CC;&#xC744; &#xB0A8;&#xAE30;&#xACE0; &#xC885;&#xB8CC;&#xB420; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.
+<!--So far, our Saga does nothing special. It just logs a message then exits.--></p><h2 id="&#xBE44;&#xB3D9;&#xAE30;-&#xD638;&#xCD9C;">&#xBE44;&#xB3D9;&#xAE30; &#xD638;&#xCD9C;</h2><p>&#xC774;&#xC81C;, &#xC624;&#xB9AC;&#xC9C0;&#xB110; &#xCE74;&#xC6B4;&#xD130; &#xB370;&#xBAA8;&#xC5D0; &#xAC00;&#xAE4C;&#xC6B4; &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;. &#xBE44;&#xB3D9;&#xAE30; &#xD638;&#xCD9C;&#xC744; &#xC124;&#xBA85;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD074;&#xB9AD; 1&#xCD08; &#xD6C4; &#xC99D;&#xAC00;&#xB418;&#xB294; &#xB610;&#xB2E4;&#xB978; &#xBC84;&#xD2BC;&#xC744; &#xCD94;&#xAC00;&#xD560;&#xAC81;&#xB2C8;&#xB2E4;.
+<!--Now let's add something closer to the original Counter demo. To illustrate asynchronous calls, we will add another button to increment the counter 1 second after the click.--></p><p>&#xBA3C;&#xC800;, UI &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC5D0; <code>onIncrementAsync</code> &#xB77C;&#xB294; &#xCF5C;&#xBC31;&#xC744; &#xB123;&#xC744;&#xAC81;&#xB2C8;&#xB2E4;.
+<!--First thing's first, we'll provide an additional callback `onIncrementAsync` to the UI component.--></p><pre><code class="lang-javascript"><span class="token keyword">const</span> Counter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> value<span class="token punctuation">,</span> onIncrement<span class="token punctuation">,</span> onDecrement<span class="token punctuation">,</span> onIncrementAsync <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token string">&apos; &apos;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>onIncrementAsync<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      Increment after <span class="token number">1</span> second
+    <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      Clicked<span class="token punctuation">:</span> <span class="token punctuation">{</span>value<span class="token punctuation">}</span> times
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span></code></pre>
+<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C;, <code>onIncrementAsync</code> &#xB97C; &#xC2A4;&#xD1A0;&#xC5B4; &#xC561;&#xC158;&#xC5D0; &#xC5F0;&#xACB0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+<!--Next we should connect the `onIncrementAsync` of the Component to a Store action.--></p><p><code>main.js</code> &#xBAA8;&#xB4C8;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC218;&#xC815;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.
+<!--We will modify the `main.js` module as follows--></p><pre><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Counter
+      value<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      onIncrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      onDecrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span> 
+      onIncrementAsync<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">&apos;INCREMENT_ASYNC&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;root&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>&#xBA85;&#xC2EC;&#xD558;&#xC138;&#xC694;, redux-thunk &#xC640;&#xB294; &#xB2EC;&#xB9AC; &#xC6B0;&#xB9AC;&#xC758; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; &#xC21C;&#xC218; &#xC561;&#xC158; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB9CC; dispatch &#xD560;&#xAC81;&#xB2C8;&#xB2E4;.
+<!--Note that unlike in redux-thunk, our component dispatches a plain object action.--></p><p>Now we will introduce another Saga to perform the asynchronous call. Our use case is as follows:</p><blockquote><p>On each <code>INCREMENT_ASYNC</code> action, we want to start a task that will do the following</p><ul><li>Wait 1 second then increment the counter
+</li></ul>
+</blockquote><p>Add the following code to the <code>sagas.js</code> module:</p><pre><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> delay <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> put<span class="token punctuation">,</span> takeEvery <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga/effects&apos;</span>
+
+<span class="token comment" spellcheck="true">// Our worker Saga: will perform the async increment task</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;INCREMENT&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">watchIncrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token function">takeEvery</span><span class="token punctuation">(</span><span class="token string">&apos;INCREMENT_ASYNC&apos;</span><span class="token punctuation">,</span> incrementAsync<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Time for some explanations.</p><p>We import <code>delay</code>, a utility function that returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a> that will resolve after a specified number of milliseconds. We&apos;ll use this function to <em>block</em> the Generator.</p><p>Sagas are implemented as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*" target="_blank">Generator functions</a> that <em>yield</em> objects to the redux-saga middleware. The yielded objects are a kind of instruction to be interpreted by the middleware. When a Promise is yielded to the middleware, the middleware will suspend the Saga until the Promise completes. In the above example, the <code>incrementAsync</code> Saga is suspended until the Promise returned by <code>delay</code> resolves, which will happen after 1 second.</p><p>Once the Promise is resolved, the middleware will resume the Saga, executing code until the next yield. In this example, the next statement is another yielded object: the result of calling <code>put({type: &apos;INCREMENT&apos;})</code>, which instructs the middleware to dispatch an <code>INCREMENT</code> action.</p><p><code>put</code> is one example of what we call an <em>Effect</em>. Effects are simple JavaScript objects which contain instructions to be fulfilled by the middleware. When a middleware retrieves an Effect yielded by a Saga, the Saga is paused until the Effect is fulfilled.</p><p>So to summarize, the <code>incrementAsync</code> Saga sleeps for 1 second via the call to <code>delay(1000)</code>, then dispatches an <code>INCREMENT</code> action.</p><p>Next, we created another Saga <code>watchIncrementAsync</code>. We use <code>takeEvery</code>, a helper function provided by <code>redux-saga</code>, to listen for dispatched <code>INCREMENT_ASYNC</code> actions and run <code>incrementAsync</code> each time.</p><p>Now we have 2 Sagas, and we need to start them both at once. To do that, we&apos;ll add a <code>rootSaga</code> that is responsible for starting our other Sagas. In the same file <code>sagas.js</code>, add the following code:</p><pre><code class="lang-javascript"><span class="token comment" spellcheck="true">// single entry point to start all Sagas at once</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">rootSaga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token punctuation">[</span>
+    <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">watchIncrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This Saga yields an array with the results of calling our two sagas, <code>helloSaga</code> and <code>watchIncrementAsync</code>. This means the two resulting Generators will be started in parallel. Now we only have to invoke <code>sagaMiddleware.run</code> on the root Saga in <code>main.js</code>.</p><pre><code class="lang-javascript"><span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">import</span> rootSaga from <span class="token string">&apos;./sagas&apos;</span>
+
+<span class="token keyword">const</span> sagaMiddleware <span class="token operator">=</span> <span class="token function">createSagaMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+sagaMiddleware<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>rootSaga<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// ...</span></code></pre>
+<h2 id="making-our-code-testable">Making our code testable</h2><p>We want to test our <code>incrementAsync</code> Saga to make sure it performs the desired task.</p><p>Create another file <code>sagas.spec.js</code>:</p><pre><code class="lang-javascript"><span class="token keyword">import</span> test from <span class="token string">&apos;tape&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> incrementAsync <span class="token punctuation">}</span> from <span class="token string">&apos;./sagas&apos;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&apos;incrementAsync Saga test&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>assert<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> gen <span class="token operator">=</span> <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true">// now what ?</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><code>incrementAsync</code> is a generator function. When run, it returns an iterator object, and the iterator&apos;s <code>next</code> method returns an object with the following shape</p><pre><code class="lang-javascript">gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// =&gt; { done: boolean, value: any }</span></code></pre>
+<p>The <code>value</code> field contains the yielded expression, i.e. the result of the expression after
+the <code>yield</code>. The <code>done</code> field indicates if the generator has terminated or if there are still
+more &apos;yield&apos; expressions.</p><p>In the case of <code>incrementAsync</code>, the generator yields 2 values consecutively:</p><ol><li><code>yield delay(1000)</code>
+</li>
+<li><code>yield put({type: &apos;INCREMENT&apos;})</code>
+</li></ol>
+<p>So if we invoke the next method of the generator 3 times consecutively we get the following
+results:</p><pre><code class="lang-javascript">gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// =&gt; { done: false, value: &lt;result of calling delay(1000)&gt; }</span>
+gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// =&gt; { done: false, value: &lt;result of calling put({type: &apos;INCREMENT&apos;})&gt; }</span>
+gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// =&gt; { done: true, value: undefined }</span></code></pre>
+<p>The first 2 invocations return the results of the yield expressions. On the 3rd invocation
+since there is no more yield the <code>done</code> field is set to true. And since the <code>incrementAsync</code>
+Generator doesn&apos;t return anything (no <code>return</code> statement), the <code>value</code> field is set to
+<code>undefined</code>.</p><p>So now, in order to test the logic inside <code>incrementAsync</code>, we&apos;ll simply have to iterate
+over the returned Generator and check the values yielded by the generator.</p><pre><code class="lang-javascript"><span class="token keyword">import</span> test from <span class="token string">&apos;tape&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> incrementAsync <span class="token punctuation">}</span> from <span class="token string">&apos;./sagas&apos;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&apos;incrementAsync Saga test&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>assert<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> gen <span class="token operator">=</span> <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span>
+    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> done<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;incrementAsync should return a Promise that will resolve after 1 second&apos;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The issue is how do we test the return value of <code>delay</code>? We can&apos;t do a simple equality test
+on Promises. If <code>delay</code> returned a <em>normal</em> value, things would&apos;ve been easier to test.</p><p>Well, <code>redux-saga</code> provides a way to make the above statement possible. Instead of calling
+<code>delay(1000)</code> directly inside <code>incrementAsync</code>, we&apos;ll call it <em>indirectly</em>:</p><pre><code class="lang-javascript"><span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> delay <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> put<span class="token punctuation">,</span> call<span class="token punctuation">,</span> takeEvery <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga/effects&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// use the call Effect</span>
+  <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>delay<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;INCREMENT&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Instead of doing <code>yield delay(1000)</code>, we&apos;re now doing <code>yield call(delay, 1000)</code>. What&apos;s the difference?</p><p>In the first case, the yield expression <code>delay(1000)</code> is evaluated before it gets passed to the caller of <code>next</code> (the caller could be the middleware when running our code. It could also be our test code which runs the Generator function and iterates over the returned Generator). So what the caller gets is a Promise, like in the test code above.</p><p>In the second case, the yield expression <code>call(delay, 1000)</code> is what gets passed to the caller of <code>next</code>. <code>call</code> just like <code>put</code>, returns an Effect which instructs the middleware to call a given function with the given arguments. In fact, neither <code>put</code> nor <code>call</code> performs any dispatch or asynchronous call by themselves, they simply return plain JavaScript objects.</p><pre><code class="lang-javascript"><span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token punctuation">:</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// =&gt; { PUT: {type: &apos;INCREMENT&apos;} }</span>
+<span class="token function">call</span><span class="token punctuation">(</span>delay<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">// =&gt; { CALL: {fn: delay, args: [1000]}}</span></code></pre>
+<p>What happens is that the middleware examines the type of each yielded Effect then decides how to fulfill that Effect. If the Effect type is a <code>PUT</code> then it will dispatch an action to the Store. If the Effect is a <code>CALL</code> then it&apos;ll call the given function.</p><p>This separation between Effect creation and Effect execution makes it possible to test our Generator in a surprisingly easy way:</p><pre><code class="lang-javascript"><span class="token keyword">import</span> test from <span class="token string">&apos;tape&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> put<span class="token punctuation">,</span> call <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga/effects&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> delay <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> incrementAsync <span class="token punctuation">}</span> from <span class="token string">&apos;./sagas&apos;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&apos;incrementAsync Saga test&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>assert<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> gen <span class="token operator">=</span> <span class="token function">incrementAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span>
+    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+    <span class="token function">call</span><span class="token punctuation">(</span>delay<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;incrementAsync Saga must call delay(1000)&apos;</span>
+  <span class="token punctuation">)</span>
+
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span>
+    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+    <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token punctuation">:</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;incrementAsync Saga must dispatch an INCREMENT action&apos;</span>
+  <span class="token punctuation">)</span>
+
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span>
+    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> done<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> undefined <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;incrementAsync Saga must be done&apos;</span>
+  <span class="token punctuation">)</span>
+
+  assert<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Since <code>put</code> and <code>call</code> return plain objects, we can reuse the same functions in our test code. And to test the logic of <code>incrementAsync</code>, we simply iterate over the generator and do <code>deepEqual</code> tests on its values.</p><p>In order to run the above test, run:</p><pre><code class="lang-sh">$ npm test</code></pre>
+<p>which should report the results on the console.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 소개">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="SagaBackground.html" class="navigation navigation-next " aria-label="Next page: 배경지식">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"튜토리얼","level":"1.2.1","depth":2,"next":{"title":"배경지식","level":"1.2.2","depth":2,"path":"introduction/SagaBackground.md","ref":"introduction/SagaBackground.md","articles":[]},"previous":{"title":"소개","level":"1.2","depth":1,"path":"introduction/README.md","ref":"introduction/README.md","articles":[{"title":"튜토리얼","level":"1.2.1","depth":2,"path":"introduction/BeginnerTutorial.md","ref":"introduction/BeginnerTutorial.md","articles":[]},{"title":"배경지식","level":"1.2.2","depth":2,"path":"introduction/SagaBackground.md","ref":"introduction/SagaBackground.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism@1.0.0","-highlight","github"],"root":"./docs_kr","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mskims/redux-saga-in-korean/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ko","gitbook":"3.2.0"},"file":{"path":"introduction/BeginnerTutorial.md","mtime":"2017-04-25T12:44:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-04-25T12:46:37.560Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="ko" >
     <head>
-        <title>Glossary · GitBook</title>
+        <title>Troubleshooting · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="api/" />
+    <link rel="next" href="Glossary.html" />
     
     
-    <link rel="prev" href="Troubleshooting.html" />
+    <link rel="prev" href="ExternalResources.html" />
     
 
     </head>
@@ -434,7 +434,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="Troubleshooting.html">
+        <li class="chapter active" data-level="1.7" data-path="Troubleshooting.html">
             
                 <a href="Troubleshooting.html">
             
@@ -447,7 +447,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="Glossary.html">
+        <li class="chapter " data-level="1.8" data-path="Glossary.html">
             
                 <a href="Glossary.html">
             
@@ -503,7 +503,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Glossary</a>
+        <a href="." >Troubleshooting</a>
     </h1>
 </div>
 
@@ -518,38 +518,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="glossary">Glossary</h1><p>This is a glossary of the core terms in Redux Saga.</p><h3 id="effect">Effect</h3><p>An effect is a plain JavaScript Object containing some instructions to be executed by the saga middleware.</p><p>You create effects using factory functions provided by the redux-saga library. For example you use
-<code>call(myfunc, &apos;arg1&apos;, &apos;arg2&apos;)</code> to instruct the middleware to invoke <code>myfunc(&apos;arg1&apos;, &apos;arg2&apos;)</code> and return
-the result back to the Generator that yielded the effect</p><h3 id="task">Task</h3><p>A task is like a process running in background. In a redux-saga based application there can be
-multiple tasks running in parallel. You create tasks by using the <code>fork</code> function</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">saga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-  <span class="token keyword">const</span> task <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="blockingnon-blocking-call">Blocking/Non-blocking call</h3><p>A Blocking call means that the Saga yielded an Effect and will wait for the outcome of its execution before
-resuming to the next instruction inside the yielding Generator.</p><p>A Non-blocking call means that the Saga will resume immediately after yielding the Effect.</p><p>For example</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">saga</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span>ACTION<span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">// Blocking: will wait for the action</span>
-  <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>ApiFn<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">// Blocking: will wait for ApiFn (If ApiFn returns a Promise)</span>
-  <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// Blocking: will wait for otherSaga to terminate</span>
+                                <h1 id="troubleshooting">Troubleshooting</h1><h3 id="app-freezes-after-adding-a-saga">App freezes after adding a saga</h3><p>Make sure that you <code>yield</code> the effects from the generator function.</p><p>Consider this example:</p><pre><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> take <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga/effects&apos;</span>
 
-  <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>                   <span class="token comment" spellcheck="true">// Non-Blocking: will dispatch within internal scheduler</span>
-
-  <span class="token keyword">const</span> task <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>otherSaga<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>args<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// Non-blocking: will not wait for otherSaga</span>
-  <span class="token keyword">yield</span> <span class="token function">cancel</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>                           <span class="token comment" spellcheck="true">// Non-blocking: will resume immediately</span>
-  <span class="token comment" spellcheck="true">// or</span>
-  <span class="token keyword">yield</span> <span class="token function">join</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>                              <span class="token comment" spellcheck="true">// Blocking: will wait for the task to terminate</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="watcherworker">Watcher/Worker</h3><p>refers to a way of organizing the control flow using two separate Sagas</p><ul><li><p>The watcher: will watch for dispatched actions and fork a worker on every action</p></li>
-<li><p>The worker: will handle the action and terminate</p></li></ul>
-<p>example</p><pre><code class="lang-javascript"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">logActions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> action <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span>ACTION<span class="token punctuation">)</span>
-    <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>worker<span class="token punctuation">,</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> action <span class="token operator">=</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// wrong</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>It will put the application into an infinite loop because <code>take()</code> only creates a description of the effect. Unless you <code>yield</code> it for the middleware to execute, the <code>while</code> loop will behave like a regular <code>while</code> loop, and freeze your application.</p><p>Adding <code>yield</code> will pause the generator and return control to the Redux Saga middleware which will execute the effect. In case of <code>take()</code>, Redux Saga will wait for the next action matching the pattern, and only then will resume the generator.</p><p>To fix the example above, simply <code>yield</code> the effect returned by <code>take()</code>:</p><pre><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> take <span class="token punctuation">}</span> from <span class="token string">&apos;redux-saga/effects&apos;</span>
+
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">logActions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> action <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// correct</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="my-saga-is-missing-dispatched-actions">My Saga is missing dispatched actions</h3><p>Make sure the Saga is not blocked on some effect. When a Saga is waiting for an Effect to
+resolve, it will not be able to take dispatched actions until the Effect is resolved.</p><p>For example, consider this example</p><pre><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">watchRequestActions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>url<span class="token punctuation">,</span> params<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token string">&apos;REQUEST&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>handleRequestAction<span class="token punctuation">,</span> url<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// The Saga will block here</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">worker</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// ... do some stuff</span>
+<span class="token keyword">function</span> <span class="token function">handleRequestAction</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">call</span><span class="token punctuation">(</span>someRemoteApi<span class="token punctuation">,</span> url<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+  <span class="token keyword">yield</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token function">someAction</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>When <code>watchRequestActions</code> performs <code>yield call(handleRequestAction, url, params)</code>, it&apos;ll wait
+for <code>handleRequestAction</code> until it terminates an returns before continuing on the next
+<code>yield take</code>. For example suppose we have this sequence of events</p><pre><code>UI                     watchRequestActions             handleRequestAction
+-----------------------------------------------------------------------------
+.......................take(&apos;REQUEST&apos;).......................................
+dispatch(REQUEST)......call(handleRequestAction).......call(someRemoteApi)... Wait server resp.
+.............................................................................
+.............................................................................
+dispatch(REQUEST)............................................................ Action missed!!
+.............................................................................
+.............................................................................
+.......................................................put(someAction).......
+.......................take(&apos;REQUEST&apos;)....................................... saga is resumed</code></pre>
+<p>As illustrated above, when a Saga is blocked on a <strong>blocking call</strong> then it will miss
+all the actions dispatched in-between.</p><p>To avoid blocking the Saga, you can use a <strong>non-blocking call</strong> using <code>fork</code> instead of <code>call</code></p><pre><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">watchRequestActions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>url<span class="token punctuation">,</span> params<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token string">&apos;REQUEST&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">yield</span> <span class="token function">fork</span><span class="token punctuation">(</span>handleRequestAction<span class="token punctuation">,</span> url<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// The Saga will resume immediately</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 
                                 
@@ -578,12 +593,12 @@ resuming to the next instruction inside the yielding Generator.</p><p>A Non-bloc
 
             
                 
-                <a href="Troubleshooting.html" class="navigation navigation-prev " aria-label="Previous page: Troubleshooting">
+                <a href="ExternalResources.html" class="navigation navigation-prev " aria-label="Previous page: External Resources">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="api/" class="navigation navigation-next " aria-label="Next page: API Reference">
+                <a href="Glossary.html" class="navigation navigation-next " aria-label="Next page: Glossary">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -594,7 +609,7 @@ resuming to the next instruction inside the yielding Generator.</p><p>A Non-bloc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Glossary","level":"1.8","depth":1,"next":{"title":"API Reference","level":"1.9","depth":1,"path":"api/README.md","ref":"api/README.md","articles":[]},"previous":{"title":"Troubleshooting","level":"1.7","depth":1,"path":"Troubleshooting.md","ref":"Troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism@1.0.0","-highlight","github"],"root":"./docs_kr","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mskims/redux-saga-in-korean/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ko","gitbook":"3.2.0"},"file":{"path":"Glossary.md","mtime":"2017-04-25T11:26:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-04-25T12:46:37.560Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Troubleshooting","level":"1.7","depth":1,"next":{"title":"Glossary","level":"1.8","depth":1,"path":"Glossary.md","ref":"Glossary.md","articles":[]},"previous":{"title":"External Resources","level":"1.6","depth":1,"path":"ExternalResources.md","ref":"ExternalResources.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism@1.0.0","-highlight","github"],"root":"./docs_kr","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mskims/redux-saga-in-korean/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ko","gitbook":"3.2.0"},"file":{"path":"Troubleshooting.md","mtime":"2017-04-25T11:26:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-04-25T12:46:37.560Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
