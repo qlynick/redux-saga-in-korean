@@ -206,6 +206,10 @@ Promise 가 한번 resolve 되고 나면, 미들웨어는 Saga 를 다시 작동
 <!--Now we have 2 Sagas, and we need to start them both at once. To do that, we'll add a `rootSaga` that is responsible for starting our other Sagas. In the same file `sagas.js`, add the following code:-->
 
 ```javascript
+// ...
+import { put, all } from 'redux-saga/effects'
+// ...
+
 // 모든 Saga들을 한번에 시작하기 위한 단일 entry point 입니다.
 export default function* rootSaga() {
   yield all([
